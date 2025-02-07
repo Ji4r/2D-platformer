@@ -77,7 +77,7 @@ public class PlayerJump : MonoBehaviour
 
     private bool CheckGround()
     {
-        hitCheckGround = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, maxGroundDistance, groundMask);
+        hitCheckGround = Physics2D.Circle(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 
         if (hitCheckGround)
             theNumberOfJumpsMade = countMaxJump;
